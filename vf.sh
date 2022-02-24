@@ -1,0 +1,1 @@
+vlc ~/Music/fav.xspf
