@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ $# -ne 0 ];then
-cmsg="$@"
+cmsg="$*"
 else
 printf "\nCommit message:\n>"
-read cmsg
+read -r cmsg
 fi
-printf "\n\e[94mCommiting with commit message: \e[1m\e[96m$cmsg\e[94m\e[39m\e[0m\n\n"
+printf "\n\e[94mCommiting with commit message: \e[1m\e[96m%s\e[94m\e[39m\e[0m\n\n" "$cmsg"
 git add -A
 git commit -am "$cmsg"
 printf "\n"
